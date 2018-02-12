@@ -31,6 +31,7 @@ build:minimal:
   script:
     - ./build.sh
   artifacts:
+    expire_in: 1 day
     paths:
       - variables
 
@@ -42,6 +43,7 @@ build:basic:
     - source ./variables
     - ./build.sh
   artifacts:
+    expire_in: 1 day
     paths:
       - variables
   dependencies:
@@ -55,6 +57,7 @@ build:custom:
     - source ./variables
     - ./build.sh
   artifacts:
+    expire_in: 1 day
     paths:
       - variables
   dependencies:
@@ -67,6 +70,10 @@ build:tools:
   script:
     - source ./variables
     - ./build.sh
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - variables
   dependencies:
     - build:custom
 
@@ -78,6 +85,7 @@ build:adntools:
     - source ./variables
     - ./build.sh
   artifacts:
+    expire_in: 1 day
     paths:
       - variables
   dependencies:
@@ -91,6 +99,7 @@ build:adnamc:
     - source ./variables
     - ./build.sh
   artifacts:
+    expire_in: 1 day
     paths:
       - variables
   dependencies:

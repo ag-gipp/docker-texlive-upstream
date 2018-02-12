@@ -1,4 +1,4 @@
-FROM adnrv/texlive:basic
+FROM adnrv/texlive:custom
 MAINTAINER adin
 
 # Install 

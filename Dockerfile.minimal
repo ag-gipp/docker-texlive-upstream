@@ -3,7 +3,7 @@ MAINTAINER adin
 
 ENV PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
 
-COPY texlive-profile.txt /tmp/
+COPY ./texlive-profile.txt /tmp/
 
 # set up packages
 RUN apt-get update -qq &&\

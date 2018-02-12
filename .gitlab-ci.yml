@@ -17,14 +17,14 @@ before_script:
     jq -r '.[1].sha')
 
 stages:
-  - minimal
+  - base
   - custom
   - tools
   - adntools
   - adnamc
 
 build:minimal:
-  stage: minimal
+  stage: base
   variables:
     IMAGE_TAG: "minimal"
   script:
@@ -34,6 +34,20 @@ build:minimal:
   artifacts:
     paths:
       - variables
+
+build:basic:
+  stage: base
+  variables:
+    IMAGE_TAG: "basic"
+  script:
+    - echo $LAST_COMMIT
+    - git diff $LAST_COMMIT HEAD --name-only | grep *.$IMAGE_TAG || true
+    - ./build.sh
+  artifacts:
+    paths:
+      - variables
+  dependencies:
+    - build:minimal
 
 build:custom:
   stage: custom

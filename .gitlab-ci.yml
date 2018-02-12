@@ -17,14 +17,15 @@ before_script:
     jq -r '.[1].sha')
 
 stages:
-  - base
+  - minimal
+  - basic
   - custom
   - tools
   - adntools
   - adnamc
 
 build:minimal:
-  stage: base
+  stage: minimal
   variables:
     IMAGE_TAG: "minimal"
   script:
@@ -36,7 +37,7 @@ build:minimal:
       - variables
 
 build:basic:
-  stage: base
+  stage: basic
   variables:
     IMAGE_TAG: "basic"
   script:

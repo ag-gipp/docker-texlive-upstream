@@ -29,8 +29,6 @@ build:minimal:
   variables:
     IMAGE_TAG: "minimal"
   script:
-    - echo $LAST_COMMIT
-    - git diff $LAST_COMMIT HEAD --name-only | grep *.$IMAGE_TAG || true
     - ./build.sh
   artifacts:
     paths:
@@ -41,8 +39,7 @@ build:basic:
   variables:
     IMAGE_TAG: "basic"
   script:
-    - echo $LAST_COMMIT
-    - git diff $LAST_COMMIT HEAD --name-only | grep *.$IMAGE_TAG || true
+    - source ./variables
     - ./build.sh
   artifacts:
     paths:

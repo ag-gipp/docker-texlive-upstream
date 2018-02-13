@@ -18,7 +18,7 @@ else
 fi
 
 if [ "$BUILD_IT" = "true" ]; then
-  docker build --pull -t "$CI_REGISTRY_IMAGE:$IMAGE_TAG" -f "Dockerfile.$IMAGE_TAG" .
+  docker build --pull -t "$CI_REGISTRY_IMAGE:$IMAGE_TAG" -f "$IMAGE_TAG.Dockerfile" .
   docker push "$CI_REGISTRY_IMAGE:$IMAGE_TAG"
   echo "REBUILD_ALL=true" >> variables
   if [ "$LATEST" = "$IMAGE_TAG" ]; then

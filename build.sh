@@ -6,7 +6,7 @@ fi
 
 BUILD_IT="false"
 
-if git diff $LAST_COMMIT HEAD --name-only | grep *.$IMAGE_TAG; then
+if git diff $LAST_COMMIT HEAD --name-only | grep "$IMAGE_TAG.Dockerfile"; then
   BUILD_IT="true"
 else
   if [ "$REBUILD_ALL" = "true" -o "$REBUILD_STAGE" = "$IMAGE_TAG" ]; then

@@ -40,7 +40,6 @@ build:basic:
   variables:
     IMAGE_TAG: "basic"
   script:
-    - source ./variables
     - ./build.sh
   artifacts:
     expire_in: 1 day
@@ -54,7 +53,6 @@ build:custom:
   variables:
     IMAGE_TAG: "custom"
   script:
-    - source ./variables
     - ./build.sh
   artifacts:
     expire_in: 1 day
@@ -68,7 +66,6 @@ build:tools:
   variables:
     IMAGE_TAG: "tools"
   script:
-    - source ./variables
     - ./build.sh
   artifacts:
     expire_in: 1 day
@@ -82,7 +79,6 @@ build:adntools:
   variables:
     IMAGE_TAG: "adntools"
   script:
-    - source ./variables
     - ./build.sh
   artifacts:
     expire_in: 1 day
@@ -96,7 +92,6 @@ build:adnamc:
   variables:
     IMAGE_TAG: "adnamc"
   script:
-    - source ./variables
     - ./build.sh
   artifacts:
     expire_in: 1 day

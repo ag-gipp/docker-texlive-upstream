@@ -1,6 +1,6 @@
 # Texlive Docker Container 
 
-This is a set of containers over TeXLive that are automatically build using GitLab and pushed into a publick [docker hub repo](https://hub.docker.com/r/adnrv/texlive/).
+This is a set of containers over TeXLive that are automatically build using GitLab and pushed into a public [docker hub repo](https://hub.docker.com/r/adnrv/texlive/).
 
 ## Types of containers
 

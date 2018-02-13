@@ -28,5 +28,6 @@ if [ "$BUILD_IT" = "true" ]; then
   if [ "$LATEST" = "$IMAGE_TAG" ]; then
     echo "Pushing $IMAGE_TAG as latest too"
     docker tag "$CI_REGISTRY_IMAGE:$IMAGE_TAG" "$CI_REGISTRY_IMAGE:latest"
+    docker push "$CI_REGISTRY_IMAGE:latest"
   fi
 fi

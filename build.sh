@@ -1,7 +1,10 @@
 #!/bin/sh
 
 if [ -e "./variables" ]; then
+  echo "Sourcing variables from previous stage"
   source ./variables
+else
+  echo "No variables available. I'm nost sourcing anything"
 fi
 
 BUILD_IT="false"
@@ -17,7 +20,6 @@ elif [ "$REBUILD_STAGE" = "$IMAGE_TAG" ]; then
   BUILD_IT="true"
 else
   echo "$IMAGE_TAG up to date, not building it"
-  echo "REBUILD_ALL=$REBUILD" >> variables
 fi
 
 if [ "$BUILD_IT" = "true" ]; then

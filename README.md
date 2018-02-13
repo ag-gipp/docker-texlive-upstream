@@ -14,17 +14,17 @@ All versions of the containers are based on `ubuntu:rolling` (see the [tags](htt
 
 These containers are the installation of the TeXLive script over docker.
 
-- [Minimal (adnrv/texlive:minimal)](Dockerfile.minimal) is the minimal scheme of TeXLive (you can use it to extend your own custom images).
-- [Basic (adnrv/texlive:basic)](Dockerfile.basic) is the basic scheme of TeXLive (you can use it to extend your own custom images) extended over the `minimal` container.
+- [Minimal (adnrv/texlive:minimal)](minimal.Dockerfile) is the minimal scheme of TeXLive (you can use it to extend your own custom images).
+- [Basic (adnrv/texlive:basic)](basic.Dockerfile) is the basic scheme of TeXLive (you can use it to extend your own custom images) extended over the `minimal` container.
 
 ### Custom Containers
 
 Other containers that are tunned to writing papers, proposal, and other academic documents need more specialized tools over TeXLive for a productive flow. The provided images (that work for me and my team) are below.
 
-- [Custom (adnrv/texlive:custom)](Dockerfile.custom) is an extension over the `minimal` container that installs the basic packages plus some other non-basic ones. It is a middle ground between basic and full.
-- [Tools (adnrv/texlive:tools)](Dockerfile.tools) is an extension over the `custom` container that provides useful tools to build and execute more complex documents.
-- [adnTools (adnrv/texlive:adntools)](Dockerfile.adntools) is an extension over the `tools` container that packages all my [(La)TeX libraries](https://gitlab.com/adn-latex) into a single container.
-- [adnAMC (adnrv/texlive:adnamc)](Dockerfile.adnamc) is an extension over the adntools container that provides the [Auto Multiple Choice package](https://www.auto-multiple-choice.net/) with [my libraries](https://gitlab.com/adn-latex/adnamc) to use it. This is provided outside of `adntools` due to its large size.
+- [Custom (adnrv/texlive:custom)](custom.Dockerfile) is an extension over the `minimal` container that installs the basic packages plus some other non-basic ones. It is a middle ground between basic and full.
+- [Tools (adnrv/texlive:tools)](tools.Dockerfile) is an extension over the `custom` container that provides useful tools to build and execute more complex documents.
+- [adnTools (adnrv/texlive:adntools)](adntools.Dockerfile) is an extension over the `tools` container that packages all my [(La)TeX libraries](https://gitlab.com/adn-latex) into a single container.
+- [adnAMC (adnrv/texlive:adnamc)](adnamc.Dockerfile) is an extension over the adntools container that provides the [Auto Multiple Choice package](https://www.auto-multiple-choice.net/) with [my libraries](https://gitlab.com/adn-latex/adnamc) to use it. This is provided outside of `adntools` due to its large size.
 
 # Containers Usage
 
@@ -55,10 +55,10 @@ docker run --rm -it --user="$(id -u):$(id -g)" -v "$(pwd)":/home adnrv/texlive p
 In case you want to build the images you can
 
 ```shell
-docker build -t texlive:tag -f Dockerfile:tag .
+docker build -t texlive:tag -f tag.Dockerfile .
 ```
 
-where the `tag` refers to the type of the Dockerfile you want to build.
+where the `tag` refers to the type of the you.Dockerfile want to build.
 
 ## Extend the Images
 

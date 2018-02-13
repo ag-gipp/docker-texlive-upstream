@@ -24,7 +24,7 @@ Other containers that are tunned to writing papers, proposal, and other academic
 - [Custom (adnrv/texlive:custom)](custom.Dockerfile) is an extension over the `minimal` container that installs the basic packages plus some other non-basic ones. It is a middle ground between basic and full.
 - [Tools (adnrv/texlive:tools)](tools.Dockerfile) is an extension over the `custom` container that provides useful tools to build and execute more complex documents.
 - [adnTools (adnrv/texlive:adntools)](adntools.Dockerfile) is an extension over the `tools` container that packages all my [(La)TeX libraries](https://gitlab.com/adn-latex) into a single container.
-- [adnAMC (adnrv/texlive:adnamc)](adnamc.Dockerfile) is an extension over the adntools container that provides the [Auto Multiple Choice package](https://www.auto-multiple-choice.net/) with [my libraries](https://gitlab.com/adn-latex/adnamc) to use it. This is provided outside of `adntools` due to its large size.
+- [adnAMC (adnrv/texlive:adnamc)](adnamc.Dockerfile) is an extension over the `adntools` container that provides the [Auto Multiple Choice package](https://www.auto-multiple-choice.net/) with [my libraries](https://gitlab.com/adn-latex/adnamc) to use it. This is provided outside of `adntools` due to its large size.
 
 # Containers Usage
 

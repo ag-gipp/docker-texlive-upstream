@@ -22,7 +22,6 @@ RUN apt-get update -qq &&\
            /var/tmp/* \
            install-tl-unx.tar.gz
 
-# Expose home
-ENV HOME /home
+# Expose /home as workin dir
 WORKDIR /home
 VOLUME ["/home"]

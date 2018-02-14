@@ -4,7 +4,7 @@ if [ -e "./variables" ]; then
   echo "Sourcing variables from previous stage"
   source ./variables
 else
-  echo "No variables available. I'm nost sourcing anything"
+  echo "No variables available. I'm not sourcing anything"
 fi
 
 BUILD_IT="false"

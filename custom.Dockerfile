@@ -13,7 +13,7 @@ RUN   tlmgr update --self &&\
       collection-langspanish \
       collection-langportuguese \
       collection-mathscience \
-
+      \
       # Other packages
       biber \
       biblatex \

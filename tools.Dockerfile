@@ -15,7 +15,7 @@ RUN apt-get update -qq &&\
       unzip \
       make \
     &&\
-
+    \
     apt-get autoclean autoremove &&\
     rm -rf /var/lib/apt/lists/* \
            /tmp/* \

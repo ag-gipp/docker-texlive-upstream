@@ -8,7 +8,10 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     \
     # Install auto-multiple-choice
     apt-get update -qq &&\
-    apt-get install --no-install-recommends auto-multiple-choice -y &&\
+    apt-get install --no-install-recommends -y software-properties-common && \
+    add-apt-repository ppa:alexis.bienvenue/test && \
+    apt-get update -qq &&\
+    apt-get install --no-install-recommends -y auto-multiple-choice &&\
     \
     # Link it in texmf
     (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex/AMC || true) &&\

@@ -24,10 +24,8 @@ stages:
   - adntools
   - adnamc
 
-build:minimal:
-  stage: minimal
-  variables:
-    IMAGE_TAG: "minimal"
+# Template for all the stages stages
+.docker-build: &docker-build
   script:
     - ./build.sh
   artifacts:
@@ -35,16 +33,18 @@ build:minimal:
     paths:
       - variables
 
+
+build:minimal:
+  stage: minimal
+  variables:
+    IMAGE_TAG: "minimal"
+  <<: *docker-build
+
 build:basic:
   stage: basic
   variables:
     IMAGE_TAG: "basic"
-  script:
-    - ./build.sh
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - variables
+  <<: *docker-build
   dependencies:
     - build:minimal
 
@@ -52,12 +52,7 @@ build:custom:
   stage: custom
   variables:
     IMAGE_TAG: "custom"
-  script:
-    - ./build.sh
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - variables
+  <<: *docker-build
   dependencies:
     - build:minimal
 
@@ -65,12 +60,7 @@ build:tools:
   stage: tools
   variables:
     IMAGE_TAG: "tools"
-  script:
-    - ./build.sh
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - variables
+  <<: *docker-build
   dependencies:
     - build:custom
 
@@ -78,12 +68,7 @@ build:adntools:
   stage: adntools
   variables:
     IMAGE_TAG: "adntools"
-  script:
-    - ./build.sh
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - variables
+  <<: *docker-build
   dependencies:
     - build:tools
 
@@ -91,11 +76,6 @@ build:adnamc:
   stage: adnamc
   variables:
     IMAGE_TAG: "adnamc"
-  script:
-    - ./build.sh
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - variables
+  <<: *docker-build
   dependencies:
     - build:adntools

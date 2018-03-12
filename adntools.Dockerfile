@@ -5,7 +5,7 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     # Get the normal repos
     git clone https://gitlab.com/adin/mcv-academic.git `kpsewhich -var-value TEXMFHOME`/tex/latex/mcv-academic &&\
     \
-    wget https://gitlab.com/adin/tikz-fa/builds/artifacts/experimental/download?job=build -O `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip &&\
+    wget https://gitlab.com/adn-latex/tikz-fa/builds/artifacts/experimental/download?job=build -O `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip &&\
     unzip `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip -d `kpsewhich -var-value TEXMFHOME`/tex/latex/tikz-fa &&\
     rm `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip &&\
     \

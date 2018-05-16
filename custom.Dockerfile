@@ -25,6 +25,7 @@ RUN   tlmgr update --self &&\
       IEEEtran \
       latexmk \
       logreq \
+      ly1 \
       siunitx \
       tracklang \
       xcite

@@ -18,7 +18,9 @@ RUN   tlmgr update --self &&\
       biber \
       biblatex \
       biblatex-ieee \
+      erewhon \
       fontawesome \
+      fourier \
       genmisc \
       IEEEtran \
       latexmk \

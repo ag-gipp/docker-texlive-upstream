@@ -1,6 +1,6 @@
-[![pipeline status](https://gitlab.com/docker-hub/texlive/badges/master/pipeline.svg)](https://gitlab.com/docker-hub/texlive/commits/master)
+<!--- [![pipeline status](https://gitlab.com/docker-hub/texlive/badges/master/pipeline.svg)](https://gitlab.com/docker-hub/texlive/commits/master)
 [![Docker hub](https://img.shields.io/docker/pulls/adnrv/texlive.svg)](https://hub.docker.com/r/adnrv/texlive)
-[![Docker Stars](https://img.shields.io/docker/stars/adnrv/texlive.svg)](https://hub.docker.com/r/adnrv/texlive)
+[![Docker Stars](https://img.shields.io/docker/stars/adnrv/texlive.svg)](https://hub.docker.com/r/adnrv/texlive) --->
 
 # Texlive Docker Container 
 

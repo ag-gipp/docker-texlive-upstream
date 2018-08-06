@@ -18,8 +18,7 @@ before_script:
 
 stages:
   - minimal
-  - basic
-  - custom
+  - standard
   - tools
   - adntools
   - adnamc
@@ -33,7 +32,6 @@ stages:
     paths:
       - variables
 
-
 build:minimal:
   stage: minimal
   variables:
@@ -41,15 +39,23 @@ build:minimal:
   <<: *docker-build
 
 build:basic:
-  stage: basic
+  stage: standard
   variables:
     IMAGE_TAG: "basic"
   <<: *docker-build
   dependencies:
     - build:minimal
 
+build:full:
+  stage: standard
+  variables:
+    IMAGE_TAG: "full"
+  <<: *docker-build
+  dependencies:
+    - build:minimal
+
 build:custom:
-  stage: custom
+  stage: standard
   variables:
     IMAGE_TAG: "custom"
   <<: *docker-build

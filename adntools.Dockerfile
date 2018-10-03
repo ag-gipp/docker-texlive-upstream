@@ -1,7 +1,11 @@
 FROM adnrv/texlive:tools
 MAINTAINER adin
 
+# Create the directories
 RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
+    (mkdir -p `kpsewhich -var-value TEXMFHOME`/bibtex/bib || true)
+
+RUN \
     # Get the normal repos
     git clone https://gitlab.com/adin/mcv-academic.git `kpsewhich -var-value TEXMFHOME`/tex/latex/mcv-academic &&\
     \

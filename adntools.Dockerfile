@@ -9,6 +9,11 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     unzip `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip -d `kpsewhich -var-value TEXMFHOME`/tex/latex/tikz-fa &&\
     rm `kpsewhich -var-value TEXMFHOME`/tex/latex/artifacts.zip &&\
     \
+    # Get journal list
+    wget https://gitlab.com/adin/journal-list/builds/artifacts/master/download?job=build -O `kpsewhich -var-value TEXMFHOME`/bibtex/bib/artifacts.zip &&\
+    unzip `kpsewhich -var-value TEXMFHOME`/bibtex/bib/artifacts.zip -d `kpsewhich -var-value TEXMFHOME`/bibtex/bib/journal-list &&\
+    rm `kpsewhich -var-value TEXMFHOME`/bibtex/bib/artifacts.zip &&\
+    \
     # Get the adn-latex repos
     git clone https://gitlab.com/adn-latex/adn-latex.git `kpsewhich -var-value TEXMFHOME`/tex/latex/adn-latex &&\
     git clone https://gitlab.com/adn-latex/codetools.git `kpsewhich -var-value TEXMFHOME`/tex/latex/codetools &&\

@@ -22,6 +22,7 @@ RUN   tlmgr update --self &&\
       fontawesome \
       fourier \
       genmisc \
+      inconsolata \
       IEEEtran \
       latexmk \
       logreq \

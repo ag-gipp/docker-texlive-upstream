@@ -18,8 +18,10 @@ RUN   tlmgr update --self &&\
       biber \
       biblatex \
       biblatex-ieee \
+      doublestroke \
       erewhon \
       fontawesome \
+      fontawesome5 \
       fourier \
       genmisc \
       inconsolata \

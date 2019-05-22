@@ -27,6 +27,7 @@ RUN   tlmgr update --self &&\
       inconsolata \
       IEEEtran \
       latexmk \
+      listofitems \
       logreq \
       ly1 \
       siunitx \

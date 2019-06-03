@@ -12,6 +12,7 @@ RUN   tlmgr update --self &&\
       collection-langkorean \
       collection-langspanish \
       collection-langportuguese \
+      collection-luatex \
       collection-mathscience \
       \
       # Other packages

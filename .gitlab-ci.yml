@@ -45,6 +45,7 @@ build:basic:
   <<: *docker-build
   dependencies:
     - build:minimal
+  needs: ["build:minimal"]
 
 build:full:
   stage: standard
@@ -53,6 +54,7 @@ build:full:
   <<: *docker-build
   dependencies:
     - build:minimal
+  needs: ["build:minimal"]
 
 build:custom:
   stage: standard
@@ -61,6 +63,7 @@ build:custom:
   <<: *docker-build
   dependencies:
     - build:minimal
+  needs: ["build:minimal"]
 
 build:tools:
   stage: tools
@@ -69,6 +72,7 @@ build:tools:
   <<: *docker-build
   dependencies:
     - build:custom
+  needs: ["build:custom"]
 
 build:adntools:
   stage: adntools
@@ -77,6 +81,7 @@ build:adntools:
   <<: *docker-build
   dependencies:
     - build:tools
+  needs: ["build:tools"]
 
 build:adnamc:
   stage: adnamc
@@ -85,3 +90,4 @@ build:adnamc:
   <<: *docker-build
   dependencies:
     - build:adntools
+  needs: ["build:adntools"]

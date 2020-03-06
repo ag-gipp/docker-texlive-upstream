@@ -9,7 +9,7 @@ before_script:
   # Install dependencies
   - apk add --no-cache curl jq
   # Login to docker hub
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
   # Get the latest successful pipeline commit
   # More info: https://gitlab.com/gitlab-org/gitlab-ce/issues/19813
   - >

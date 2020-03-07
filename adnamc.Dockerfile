@@ -9,7 +9,7 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     # Install auto-multiple-choice
     apt-get update -qq &&\
     apt-get install --no-install-recommends -y software-properties-common && \
-    add-apt-repository ppa:alexis.bienvenue/test && \
+    add-apt-repository 'deb http://ppa.launchpad.net/alexis.bienvenue/test/ubuntu disco main' && \
     apt-get update -qq &&\
     apt-get install --no-install-recommends -y auto-multiple-choice &&\
     \

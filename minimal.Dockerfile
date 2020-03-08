@@ -20,10 +20,13 @@ RUN apt-get update -qq &&\
     /tmp/install-tl/install-tl --profile=/tmp/texlive-profile.txt && \
     \
     # Install equivalent packages
+    cd /tmp && \
     apt-get install equivs --no-install-recommends && \
     equivs-control /tmp/debian-equivs.txt && \
     equivs-build /tmp/debian-equivs.txt && \
     dpkg -i debian-equivs_2019-1_all.deb && \
+    \
+    # Clean up
     apt-get install -f && \
     apt-get autoclean && \
     apt-get autoremove && \

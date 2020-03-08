@@ -4,11 +4,12 @@ MAINTAINER adin
 ENV PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
 
 COPY ./texlive-profile.txt /tmp/
-COPY ./debian-equivs.txt /tmp/
+COPY ./debian-equivs.txt /tmp/texlive-local
 
 # set up packages
 RUN apt-get update -qq &&\
     apt-get install --no-install-recommends -y \
+      equivs \
       wget \
       perl \
     && \
@@ -21,13 +22,12 @@ RUN apt-get update -qq &&\
     \
     # Install equivalent packages
     cd /tmp && \
-    apt-get install equivs --no-install-recommends && \
-    equivs-control /tmp/debian-equivs.txt && \
-    equivs-build /tmp/debian-equivs.txt && \
-    dpkg -i debian-equivs_2019-1_all.deb && \
+    equivs-control texlive-local && \
+    equivs-build texlive-local && \
+    dpkg -i texlive-local_2019-1_all.deb && \
+    apt-get install -f && \
     \
     # Clean up
-    apt-get install -f && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* \

@@ -7,10 +7,13 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     git clone https://gitlab.com/adn-latex/adnsurvey.git `kpsewhich -var-value TEXMFHOME`/tex/latex/adnsurvey &&\
     \
     # Install auto-multiple-choice
-    apt-get update -qq &&\
-    apt-get install --no-install-recommends -y software-properties-common && \
+    apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+      dirmngr \
+      software-properties-common \      
+    && \
     add-apt-repository 'deb http://ppa.launchpad.net/alexis.bienvenue/test/ubuntu disco main' && \
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B23A7B34A0F1A3A9 && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B23A7B34A0F1A3A9 && \
     apt-get update -qq &&\
     apt-get install --no-install-recommends -y auto-multiple-choice &&\
     \

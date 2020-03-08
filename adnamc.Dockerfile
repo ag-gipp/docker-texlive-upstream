@@ -10,12 +10,13 @@ RUN (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex || true) &&\
     apt-get update -qq && \
     apt-get install --no-install-recommends -y \
       dirmngr \
-      software-properties-common \      
+      software-properties-common \ 
+      gpg-agent \     
     && \
-    add-apt-repository 'deb http://ppa.launchpad.net/alexis.bienvenue/test/ubuntu disco main' && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B23A7B34A0F1A3A9 && \
+    add-apt-repository 'deb http://ppa.launchpad.net/alexis.bienvenue/test/ubuntu disco main' && \
     apt-get update -qq &&\
-    apt-get install --no-install-recommends -y auto-multiple-choice &&\
+    apt-get install --no-install-recommends -y auto-multiple-choice auto-multiple-choice-common &&\
     \
     # Link it in texmf
     (mkdir -p `kpsewhich -var-value TEXMFHOME`/tex/latex/AMC || true) &&\

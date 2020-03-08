@@ -24,7 +24,7 @@ RUN apt-get update -qq &&\
     cd /tmp && \
     equivs-control texlive-local && \
     equivs-build debian-equivs.txt && \
-    dpkg -i texlive-local_2019-1_all.deb && \
+    dpkg -i texlive-local*.deb && \
     apt-get install -f && \
     \
     # Clean up

@@ -3,7 +3,7 @@ Priority: optional
 Standards-Version: 4.1.4
 
 Package: texlive-local
-Version: 2019-1
+Version: 1.0-rolling
 Maintainer: adin <adin@ic.unicamp.br>
 Provides: chktex, biblatex, biblatex-dw, cm-super, cm-super-minimal, context, 
  dvidvi, dvipng, feynmf, fragmaster, jadetex, lacheck, latex-beamer, 

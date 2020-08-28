@@ -2,6 +2,8 @@ FROM ubuntu:rolling
 MAINTAINER adin
 
 ENV PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY ./texlive-profile.txt /tmp/
 COPY ./debian-equivs.txt /tmp/
@@ -12,6 +14,7 @@ RUN apt-get update -qq &&\
       equivs \
       wget \
       perl \
+      ca-certificates \
     && \
     \
     # Install texlive

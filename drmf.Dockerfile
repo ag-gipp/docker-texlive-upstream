@@ -23,3 +23,5 @@ RUN cpanm https://github.com/brucemiller/LaTeXML.git
 RUN cpanm Template YAML
 
 RUN cpanm Template::Toolkit
+
+ADD ./etc /etc

@@ -25,3 +25,5 @@ RUN cpanm Template YAML
 RUN cpanm Template::Toolkit
 
 ADD ./etc /etc
+
+RUN cpanm XML::LibXML

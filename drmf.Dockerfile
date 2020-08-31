@@ -6,6 +6,7 @@ RUN apt-get update -qq &&\
       libxml2-dev \
       libxslt-dev \
       libxml-libxslt-perl \
+      libxml-libxml-perl \
       git \
       default-jdk javacc \
       imagemagick libimage-magick-perl &&\
@@ -19,3 +20,6 @@ RUN cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -M
 
 RUN cpanm https://github.com/brucemiller/LaTeXML.git
 
+RUN cpanm Template YAML
+
+RUN cpanm Template::Toolkit

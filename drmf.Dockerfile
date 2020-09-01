@@ -8,6 +8,7 @@ RUN apt-get update -qq &&\
       libxml-libxslt-perl \
       libxml-libxml-perl \
       git \
+      ghostscript \
       default-jdk javacc \
       imagemagick libimage-magick-perl &&\
     apt-get autoclean &&\
